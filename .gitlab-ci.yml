@@ -1,0 +1,13 @@
+image: node:14.16.1
+
+cache:
+    paths:
+        - node_modules/
+
+build-test:
+    stage: test
+    script:
+        - npm install
+        - npm run export
+    only:
+        - merge_requests
